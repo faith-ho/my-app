@@ -7,13 +7,13 @@ import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
 import About from "./Pages/About";
 import ToDo from "./Pages/ToDo";
-import CV from "./Pages/CV";
-
+// import CV from "./Pages/CV";
+import { CV } from "./Pages/CV";
+import Counter from "./Pages/Counter";
 
 function App() {
   return (
     <div>
-    {/* <header class='header'> */}
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<NavBar />} >
@@ -23,14 +23,11 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="CV" element={<CV />} />
           <Route path="to-do" element={<ToDo />} />
+          <Route path="counter" element={<Counter />} />
         </Route>
       </Routes>
     </BrowserRouter>
-
-      {/* </header>   */}
-
     </div>
-
   );
 }
 

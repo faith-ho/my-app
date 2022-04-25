@@ -24,6 +24,7 @@ const HeaderLink = ({ link }) => {
             <HeaderLink link='CV' />
             <HeaderLink link='contact' />
             <HeaderLink link='to-Do' />
+            <HeaderLink link='counter' />
       </div>
       <Outlet />
       </div>
