@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NewTask from "../Components/NewTask";
 import TasksList from "../Components/TasksList";
 
@@ -29,6 +29,14 @@ export default function ToDoList() {
         (task) => task.id !== taskIdToRemove
       ));
     };
+
+    // useEffect(() => {
+    //   console.log("I re-rendered");
+    //   <TasksList 
+    //   allTasks={allTasks} 
+    //   handleDelete={handleDelete} 
+    //   />
+    // }, [allTasks])
   
     return (
       <main>
