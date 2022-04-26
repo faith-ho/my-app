@@ -7,7 +7,7 @@ import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
 import About from "./Pages/About";
 import ToDo from "./Pages/ToDo";
-import CV from "./Pages/CV";
+import { CV } from "./Pages/CV";
 import ProductList from "./Pages/ProductList"
 import Counter from "./Pages/Counter"
 
