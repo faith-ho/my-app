@@ -15,7 +15,6 @@ import Counter from "./Pages/Counter"
 function App() {
   return (
     <div>
-    {/* <header class='header'> */}
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<NavBar />} >
@@ -30,9 +29,6 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-
-      {/* </header>   */}
-
     </div>
 
   );
