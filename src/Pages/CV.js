@@ -1,45 +1,81 @@
-import React from 'react';
-import './CV.css';
+import React, { useState } from "react";
+import "./CV.css";
+import { Education, workExperience } from "../Components/CVList";
+
+export default function CV() {
+  const [pageTitle, setPageTitle] = useState();
+  const [chosenPage, setChosenPage] = useState("");
+
+  const handleClick = (section) => {
+    setPageTitle(section);
+  };
+
+  return (
+    <div>
+      <h2>This is my CV page</h2>
+      <h3>This is the chosen page: {pageTitle}</h3>
+      <button
+        onClick={() => {
+          handleClick("education");
+          setChosenPage(Education);
+        }}
+      >
+        Education
+      </button>
+      <button
+        onClick={() => {
+          handleClick("work experience");
+          setChosenPage(workExperience);
+        }}
+      >
+        Work Experience
+      </button>
+      <div>
+        <body>{chosenPage}</body>
+      </div>
+    </div>
+  );
+}
 
 // const CV = () => {
 
-export class CV extends React.Component {
+// export class CV extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: "all"
-        }
-        this.handleClick = this.handleClick.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    };
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             value: "all"
+//         }
+//         this.handleClick = this.handleClick.bind(this);
+//         this.handleSubmit = this.handleSubmit.bind(this);
+//     };
 
-    handleClick(event) {
-        this.setState({value: event.target.value})
-        // alert('Your favorite flavor is: ' + this.state.value);
-    };
+//     handleClick(event) {
+//         this.setState({value: event.target.value})
+//         // alert('Your favorite flavor is: ' + this.state.value);
+//     };
 
-    handleSubmit(event) {
-      alert('Your favorite flavor is: ' + this.state.value);
-      event.preventDefault();
-    };
+//     handleSubmit(event) {
+//       alert('Your favorite flavor is: ' + this.state.value);
+//       event.preventDefault();
+//     };
 
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit}>
-            <lable>Choose:</lable>
-            <select value={this.state.value} onClick={this.handleClick} name="cv" id="cv-select">
-                <option value="">--Please choose an option--</option>
-                <option value="education">Education and Qualifications</option>
-                <option value="work-experience">Work Experience</option>
-                <option value="extra-curricular">Extra-Curricular Experience</option>
-                <option value="awards">Awards and Scholarships</option>
-                <option value="languages">Languages</option>
-            </select>
-            </form>
-        )
-    }
-}
+//     render() {
+//         return (
+//             <form onSubmit={this.handleSubmit}>
+//             <lable>Choose:</lable>
+//             <select value={this.state.value} onClick={this.handleClick} name="cv" id="cv-select">
+//                 <option value="">--Please choose an option--</option>
+//                 <option value="education">Education and Qualifications</option>
+//                 <option value="work-experience">Work Experience</option>
+//                 <option value="extra-curricular">Extra-Curricular Experience</option>
+//                 <option value="awards">Awards and Scholarships</option>
+//                 <option value="languages">Languages</option>
+//             </select>
+//             </form>
+//         )
+//     }
+// }
 
 //     return (
 //         <div>
@@ -61,9 +97,9 @@ export class CV extends React.Component {
 //             <table>
 //                 <tr>
 //                     <td>
-//                         MSc International Political Economy 
+//                         MSc International Political Economy
 //                     </td>
-                   
+
 //                 </tr>
 //                 <tr>
 //                     <td>
@@ -79,7 +115,6 @@ export class CV extends React.Component {
 //             <h3 class="section-title">Awards and Scholarships</h3>
 //             <hr class="horizontal-break"></hr>
 //             <h3 class="section-title">Languages</h3>
-
 
 //         </div>
 //     )
