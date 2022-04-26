@@ -8,6 +8,8 @@ import Contact from "./Pages/Contact";
 import About from "./Pages/About";
 import ToDo from "./Pages/ToDo";
 import CV from "./Pages/CV";
+import ProductList from "./Pages/ProductList"
+import Counter from "./Pages/Counter"
 
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="CV" element={<CV />} />
           <Route path="to-do" element={<ToDo />} />
+          <Route path="counter" element={<Counter />} />
+          <Route path="product" element={<ProductList />} />
         </Route>
       </Routes>
     </BrowserRouter>
