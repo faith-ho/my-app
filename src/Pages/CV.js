@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./CV.css";
-import { Education, workExperience } from "../Components/CVList";
+import CVSection from "../Components/CVList";
 
 export default function CV() {
   const [pageTitle, setPageTitle] = useState();
@@ -8,6 +8,7 @@ export default function CV() {
 
   const handleClick = (section) => {
     setPageTitle(section);
+    setChosenPage(<CVSection chosenSection={section} />);
   };
 
   return (
@@ -16,19 +17,24 @@ export default function CV() {
       <h3>This is the chosen page: {pageTitle}</h3>
       <button
         onClick={() => {
-          handleClick("education");
-          setChosenPage(Education);
+          handleClick("Education");
         }}
       >
         Education
       </button>
       <button
         onClick={() => {
-          handleClick("work experience");
-          setChosenPage(workExperience);
+          handleClick("Work Experience");
         }}
       >
         Work Experience
+      </button>
+      <button
+        onClick={() => {
+          handleClick("Extra-Curricular Experience");
+        }}
+      >
+        Extra-Curricular Experience
       </button>
       <div>
         <body>{chosenPage}</body>
